@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            sometitle2
+        </title>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <link href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+        <script defer src="newBooking.js" type="text/javascript" >
+            
+        </script>
+    </head>
+    <body>
+        <div id="page1" class="pure-g">
+            <div class="pure-u-1-6">
+                
+            </div>
+            <div class="pure-u-2-3">
+                <form class="pure-form pure-form-aligned" method="POST" action="" >
+                    <legend>
+                        Kursinformation
+                    </legend>
+                    <div class="pure-control-group">
+                        <label for="lvkennung" >
+                            LV-Name
+                        </label>
+                        <input id="lvkennung" autocomplete="off" value="" title="Bitte geben Sie hier die Kennung der Lehrveranstaltung an, für die eine Prüfung durchgeführt werden soll. Diese Kennung kann dem Vorlesungsverzeichnis entnommen werden." placeholder="LV-Name" list=country type="text" name=lvkennung />
+                        <span class="pure-form-message-inline">
+                            This is a required field
+                        </span>
+                    </div>
+                    <datalist id="country">
+                        <option value="Mathematik I" />
+                        <option value="Mathematik II" />
+                        <option value="Biologie I" />
+                        <option value="Biologie II" />
+                        <option value="Deutsch I" />
+                        <option value="Deutsch II" />
+                    </datalist>
+                    <div class="pure-control-group">
+                        <label for="lvnbr" >
+                            LV-Nummer
+                        </label>
+                        <input id="lvnbr" autocomplete="off" value="" title="{tooltip}" placeholder="LV-Nummer" type="text" name=lvnbr />
+                        <span class="pure-form-message-inline">
+                            This is a required field
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvtype" >
+                            Klausurtyp
+                        </label>
+                        <select id="lvtype" name=lvtype >
+                            <option>
+                                Hauptklausur
+                            </option>
+                            <option>
+                                Nachklausur
+                            </option>
+                        </select>
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvsemester" >
+                            Semester
+                        </label>
+                        <select id="lvsemester" name=lvsemester >
+                            <option>
+                                WiSe 2024/2025
+                            </option>
+                            <option>
+                                SoSe 2025
+                            </option>
+                            <option>
+                                WiSe 2025/2026
+                            </option>
+                            <option>
+                                SoSe 2026
+                            </option>
+                        </select>
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-controls">
+                        <button id="page1forward" class="pure-button pure-button-primary" type="button" >
+                            Weiter
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="pure-u-1-6">
+                
+            </div>
+        </div>
+        <div id="page2" class="pure-g" hidden >
+            <div class="pure-u-1-6">
+                
+            </div>
+            <div class="pure-u-2-3">
+                <form class="pure-form pure-form-aligned" method="POST" action="" >
+                    <legend>
+                        Termin Filter
+                    </legend>
+                    <div class="pure-control-group">
+                        <label for="lvselfeditor" >
+                            Erstellen Sie Ihre Prüfung im Editor selbst?
+                        </label>
+                        <select id="lvselfeditor" name=lvselfeditor >
+                            <option>
+                                Nein
+                            </option>
+                            <option>
+                                Ja
+                            </option>
+                        </select>
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvformat" >
+                            Prüfungsformat
+                        </label>
+                        <select id="lvformat" name=lvformat >
+                            <option>
+                                Digitale Präsenzprüfung
+                            </option>
+                            <option>
+                                Digitale Distanzprüfung
+                            </option>
+                            <option>
+                                Einsicht
+                            </option>
+                        </select>
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvduration" >
+                            Dauer (in Minuten)
+                        </label>
+                        <input id="lvduration" autocomplete="off" value="90" title="{tooltip}" placeholder="Dauer (in Minuten)" type="text" name=lvduration />
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvattendees" >
+                            Teilnehmende
+                        </label>
+                        <input id="lvattendees" autocomplete="off" value="40" title="{tooltip}" placeholder="Teilnehmende" type="text" name=lvattendees />
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvdate" >
+                            Zeitpunkt
+                        </label>
+                        <input id="lvdate" autocomplete="off" value="" title="{tooltip}" readonly placeholder="Zeitpunkt" type="text" name=lvdate />
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="calendar">
+                        <header>
+                            <a id="prev_month" class="next_month" href="#" >
+                                <<
+                            </a>
+                            <h1 id="cal-title">
+                                Januar 2000
+                            </h1>
+                            <a id="next_month" class="next_month" href="#" >
+                                >>
+                            </a>
+                        </header>
+                        <ul class="weekdays">
+                            <li>
+                                <abbr title="M" >
+                                    Mon
+                                </abbr>
+                            </li>
+                            <li>
+                                <abbr title="T" >
+                                    Tue
+                                </abbr>
+                            </li>
+                            <li>
+                                <abbr title="W" >
+                                    Wed
+                                </abbr>
+                            </li>
+                            <li>
+                                <abbr title="T" >
+                                    Thu
+                                </abbr>
+                            </li>
+                            <li>
+                                <abbr title="F" >
+                                    Fri
+                                </abbr>
+                            </li>
+                            <li>
+                                <abbr title="S" >
+                                    Sat
+                                </abbr>
+                            </li>
+                            <li>
+                                <abbr title="S" >
+                                    Sun
+                                </abbr>
+                            </li>
+                        </ul>
+                        <ol id="days" class="day-grid"/>
+                    </div>
+                    <div class="pure-controls">
+                        <button id="page2backward" class="pure-button pure-button-secondary" type="button" >
+                            Zurück
+                        </button>
+                        <button id="page2forward" class="pure-button pure-button-primary" type="button" >
+                            Weiter
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="pure-u-1-6">
+                
+            </div>
+        </div>
+        <div id="page3" class="pure-g" hidden >
+            <div class="pure-u-1-6">
+                
+            </div>
+            <div class="pure-u-2-3">
+                <form class="pure-form pure-form-aligned" method="POST" action="rest_add_booking.php" >
+                    <legend>
+                        Buchungsübesicht
+                    </legend>
+                    <div class="pure-control-group">
+                        <label for="lvkennung_check" >
+                            LV-Name
+                        </label>
+                        <input id="lvkennung_check" autocomplete="off" value="" title="{tooltip}" readonly placeholder="LV-Name" type="text" name=lvkennung_check />
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvnbr_check" >
+                            LV-Nummer
+                        </label>
+                        <input id="lvnbr_check" autocomplete="off" value="" title="{tooltip}" readonly placeholder="LV-Nummer" type="text" name=lvnbr_check />
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvtype_check" >
+                            Klausurtyp
+                        </label>
+                        <input id="lvtype_check" autocomplete="off" value="" title="{tooltip}" readonly placeholder="Klausurtyp" type="text" name=lvtype_check />
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvsemester_check" >
+                            Semester
+                        </label>
+                        <input id="lvsemester_check" autocomplete="off" value="" title="{tooltip}" readonly placeholder="Semester" type="text" name=lvsemester_check />
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvformat_check" >
+                            Format
+                        </label>
+                        <input id="lvformat_check" autocomplete="off" value="" title="{tooltip}" readonly placeholder="Format" type="text" name=lvformat_check />
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvdate_check" >
+                            Startzeit
+                        </label>
+                        <input id="lvdate_check" autocomplete="off" value="" title="{tooltip}" readonly placeholder="Startzeit" type="text" name=lvdate_check />
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvduration_check" >
+                            Dauer
+                        </label>
+                        <input id="lvduration_check" autocomplete="off" value="" title="{tooltip}" readonly placeholder="Dauer" type="text" name=lvduration_check />
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="lvattendees_check" >
+                            Teilnehmer
+                        </label>
+                        <input id="lvattendees_check" autocomplete="off" value="" title="{tooltip}" readonly placeholder="Teilnehmer" type="text" name=lvattendees_check />
+                        <span class="pure-form-message-inline">
+                            
+                        </span>
+                    </div>
+                    <div class="pure-controls">
+                        <button id="page3backward" class="pure-button pure-button-secondary" type="button" >
+                            Zurück
+                        </button>
+                        <button id="page3forward" class="pure-button pure-button-primary" type="submit" >
+                            Buchen
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="pure-u-1-6">
+                
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+| {&!include} src="page.fmd"
+| {&html} title="sometitle2"
++| &?header-content
+ +| {&css} src="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+  | {&css} src="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css"
+  | {&css} src="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-min.css"
+  | {&css} src="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css"
+  | {&css} src="style.css"
+  | {&js} src="index.js" defer
+ | div | h1 >Buchungsübersicht
+       | div | div | table#items >
+       | a href="newBooking.html" >Neue Buchung

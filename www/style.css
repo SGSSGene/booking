@@ -1,0 +1,118 @@
+header {
+  display: flex;
+  align-items: center;
+  font-size: calc(8px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+  justify-content: center;
+  margin-bottom: 2em;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.calendar ul, .calendar ol {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 1em;
+  margin: 0 auto;
+  max-width: 64em;
+  padding: 0;
+}
+
+.calendar li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin-left: 0;
+  font-size: calc(16px + (21 - 16) * ((100vw - 300px) / (1600 - 300)));
+}
+ul.weekdays {
+  margin-bottom: 1em;
+}
+
+ul.weekdays li {
+  height: 2vw;
+}
+
+ol.day-grid li {
+  background-color: #eaeaea;
+  border: 1px solid #eaeaea;
+  min-height: 3vw;
+  max-height: 125px;
+  transition: background-color 0.2s, transform 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+ul.weekdays abbr[title] {
+  border: none;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+ol.day-grid li.month-next,
+ol.day-grid li.month-prev {
+  background-color: #fff;
+}
+ol.day-grid li {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+ol.day-grid li > div {
+    display: block;
+}
+
+ol.day-grid li > div:nth-child(2) {
+    background-color: #888;
+    margin: 10px;
+    border: 0px;
+    border-radius: 5px;
+
+}
+
+ol.day-grid li > div:nth-child(2) > div {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+ol.day-grid li > div:nth-child(2) > div:hover {
+    background-color: #0f0;
+}
+
+
+
+
+ol.day-grid li[vacant]:hover {
+  transition: transform 0.2s;
+  border: 1px #000 solid;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+ol.day-grid li[vacant] {
+    background-color: #0f0;
+}
+a.next_month {
+    color: #fff;
+    font-size: 2em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+@media all and (max-width: 800px) {
+  ul, ol {
+    grid-gap: .25em;
+  }
+
+  ul.weekdays li {
+    font-size: 0;
+  }
+
+  ul.weekdays > li abbr:after {
+    content: attr(title);
+    font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+    text-align: center;
+  }
+}

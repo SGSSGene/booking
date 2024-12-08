@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+| &input id type="text" label tooltip message="" attributes="" value="" | div.pure-control-group
++| label for="{id}" >{label}
+ | input#{id} name={id} type="{type}" placeholder="{label}" title="{tooltip}" value="{value}" autocomplete="off" {attributes}
+ | .pure-form-message-inline >{message}
+| &select id label message="" | div.pure-control-group
++| label for="{id}" >{label}
+ | select#{id} name={id} | {&!children}
+ | .pure-form-message-inline >{message}
+| &page id hidden="" | div#{id}.pure-g {hidden}
++| div.pure-u-1-6 >
+ | div.pure-u-2-3 | {&!children}
+ | div.pure-u-1-6 >
+| &form action="" method="POST" | form.pure-form.pure-form-aligned action="{action}" method="{method}" | {&!children}
+| &formgroup title=""
++| legend >{title}
+ | {&!children}
+| &input-calendar
++| div.calendar | header | a.next_month#prev_month href="#" ><<
+                         | h1#cal-title >Januar 2000
+                         | a.next_month#next_month href="#" >>>
+                | ul.weekdays | li | abbr title="M" >Mon
+                              | li | abbr title="T" >Tue
+                              | li | abbr title="W" >Wed
+                              | li | abbr title="T" >Thu
+                              | li | abbr title="F" >Fri
+                              | li | abbr title="S" >Sat
+                              | li | abbr title="S" >Sun
+                | ol.day-grid#days
+| {&!include} src="page.fmd"
+| {&html} title="sometitle2"
++| &?header-content
+ +| {&css} src="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+  | {&css} src="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css"
+  | {&css} src="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-min.css"
+  | {&css} src="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css"
+  | {&css} src="style.css"
+  | {&js} src="js.js" defer
+ | {&page} id="page1"
+ +| {&form}
+  +| {&formgroup} title="Kursinformation"
+   | {&input}  id="lvkennung" attributes="list=country" label="LV-Name" tooltip="Bitte geben Sie hier die Kennung der Lehrveranstaltung an, für die eine Prüfung durchgeführt werden soll. Diese Kennung kann dem Vorlesungsverzeichnis entnommen werden." message="This is a required field"
+   | datalist#country
+   +| option value="Mathematik I"
+    | option value="Mathematik II"
+    | option value="Biologie I"
+    | option value="Biologie II"
+    | option value="Deutsch I"
+    | option value="Deutsch II"
+   | {&input}  id="lvnbr"     label="LV-Nummer" message="This is a required field"
+   | {&select} id="lvtype"    label="Klausurtyp"
+   +| option >Hauptklausur
+    | option >Nachklausur
+   | {&select} id="lvsemester" label="Semester"
+   +| option >WiSe 2024/2025
+    | option >SoSe 2025
+    | option >WiSe 2025/2026
+    | option >SoSe 2026
+   | div.pure-controls
+   +| button.pure-button.pure-button-primary#page1forward type="button" >Weiter
+ | {&page} id="page2" hidden
+ +| {&form}
+  +| {&formgroup} title="Termin Filter"
+   +| {&select} id="lvselfeditor" label="Erstellen Sie Ihre Prüfung im Editor selbst?"
+    +| option >Nein
+     | option >Ja
+    | {&select} id="lvformat" label="Prüfungsformat"
+    +| option >Digitale Präsenzprüfung
+     | option >Digitale Distanzprüfung
+     | option >Einsicht
+    | {&input}  id="lvduration" label="Dauer (in Minuten)" value=90
+    | {&input}  id="lvattendees" label="Teilnehmende" value=40
+    | {&input}  id="lvdate" label="Zeitpunkt" attributes=readonly
+    | {&input-calendar}
+   | div.pure-controls
+   +| button.pure-button.pure-button-secondary#page2backward type="button" >Zurück
+    | button.pure-button.pure-button-primary#page2forward type="button" >Weiter
+ | {&page} id="page3" hidden
+ +| {&form} action="booking.php" method="POST"
+  +| {&formgroup} title="Buchungsübesicht"
+   +| {&input} id="lvkennung_check" label="LV-Name" attributes="readonly"
+    | {&input} id="lvnbr_check" label="LV-Nummer" attributes="readonly"
+    | {&input} id="lvtype_check" label="Klausurtyp" attributes="readonly"
+    | {&input} id="lvsemester_check" label="Semester" attributes="readonly"
+    | {&input} id="lvformat_check" label="Format" attributes="readonly"
+    | {&input} id="lvdate_check" label="Startzeit" attributes="readonly"
+    | {&input} id="lvduration_check" label="Dauer" attributes="readonly"
+    | {&input} id="lvattendees_check" label="Teilnehmer" attributes="readonly"
+   | div.pure-controls
+   +| button.pure-button.pure-button-secondary#page3backward type="button" >Zurück
+    | button.pure-button.pure-button-primary#page3forward type="submit" >Buchen
+
